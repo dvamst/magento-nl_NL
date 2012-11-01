@@ -3,31 +3,35 @@
 <!--@styles
     body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
 @-->
-<div style="font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;">
-<table cellspacing="0" cellpadding="0" border="0" width="98%" style="margin-top:10px; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; margin-bottom:10px;">
-<tr>
-    <td align="center" valign="top">
-        <!-- [ header starts here] -->
-        <table cellspacing="0" cellpadding="0" border="0" width="650">
-            <tr>
-                <td valign="top"><a href="{{store url=""}}"><img src="{{skin url="images/logo_email.gif" _area='frontend'}}" alt="Magento"  style="margin-bottom:10px;" border="0"/></a></td>
-            </tr>
-        </table>
-        <!-- [ middle starts here] -->
-        <table cellspacing="0" cellpadding="0" border="0" width="650">
-            <tr>
-                <td valign="top">
-                    <p>
-                        <strong>Hello {{var customer.name}}</strong>,<br/><br>
-                        Your Quote Request from {{var quote.getStoreGroupName()}} with number # {{var quote.increment_id}} has been cancelled<br><br>
-                        You can check the status of your cancelled Request by <a href="{{store url="customer/account/"}}" style="color:#1E7EC8;">logging into your account</a>.<br><br>
-                        If you have any questions about making a new Quote Request please contact us at <a href="mailto:dummyemail@magentocommerce.com" style="color:#1E7EC8;">dummyemail@magentocommerce.com</a> or call us at <span class="nobr">(555) 555-0123</span> Monday - Friday, 8am - 5pm PST.
-                    </p><br>
-                    <p>Regards {{var order.getStoreGroupName()}} team</p>
-					</td>
-			</tr>
-		</table>		
-     </td>
-	</tr>
-</table>
-</div>               
+<body style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+<div style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+<table cellspacing="0" cellpadding="0" border="0" height="100%" width="100%">
+        <tr>
+            <td align="center" valign="top" style="padding:20px 0 20px 0">
+                <!-- [ header starts here] -->
+                <table bgcolor="FFFFFF" cellspacing="0" cellpadding="10" border="0" width="650" style="border:1px solid #E0E0E0;">
+                    <tr>
+                        <td valign="top">
+                            <a href="{{store url=""}}"><img src="{{skin url="images/logo_email.gif" _area='frontend'}}" alt="{{var store.getFrontendName()}}"  style="margin-bottom:10px;" border="0"/></a></td>
+                    </tr>
+                    <!-- [ middle starts here] -->
+                    <tr>
+                        <td valign="top">
+                            <h1 style="font-size:22px; font-weight:normal; line-height:22px; margin:0 0 11px 0;">Beste {{htmlescape var=$customer.name}},</h1>
+
+                            <p style="font-size:12px; line-height:16px; margin:0 0 16px 0;">
+                                Uw offerteaanvraag op {{var quote.getStoreGroupName()}} met het nummer {{var quote.increment_id}} is geannuleerd.
+                            </p>
+
+                            <p style="font-size:12px; line-height:16px; margin:0;">Wanneer u vragen heeft, kunt u per e-mail contact met ons opnemen door een bericht te sturen naar <a href="mailto:{{config path='trans_email/ident_support/email'}}" style="color:#1E7EC8;">{{config path='trans_email/ident_support/email'}}</a>{{configFlag general/store_information/phone}} of ons per telefoon bereiken: {{config path='general/store_information/phone'}}{{/configFlag}}.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #EAEAEA; text-align: center;"><p style="font-size:12px; margin:0; text-align: center;">Met vriendelijke groet, <strong>{{var store.getFrontendName()}}</strong></p></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
