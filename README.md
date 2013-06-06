@@ -1,3 +1,5 @@
+# DEZE VERTALINGEN WORDT NIET MEER ONDERHOUDEN, ZIE [RECENTE MAGENTO 1.7 VERTALINGEN](https://github.com/ho-nl/Ho_nl_NL)
+
 # Nederlandse Magento vertalingen
 - Letterlijke vertalingen van de engelse Magento installatie
 
